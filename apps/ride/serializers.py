@@ -7,7 +7,8 @@ class RideEventSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class RideSerializer(serializers.ModelSerializer):
-    ride_events = RideEventSerializer(many=True, read_only=True, source='events')
+    # ride_events = RideEventSerializer(many=True, read_only=True, source='events')
+    todays_ride_events = RideEventSerializer(many=True, read_only=True)
 
     class Meta:
         model = Ride
